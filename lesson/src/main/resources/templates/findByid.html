@@ -9,5 +9,14 @@
     <p>id:<span th:text="${product.id}"></span></p>
     <p>商品名:<span th:text="${product.name}"></span></p>
     <p>値段:<span th:text="${product.price}"></span></p>
+
+<form th:action="'/product/update/'+${product.id}" method="get">
+    <p><button type="submit">修正</button></p>
+</form>
+
+<form th:action="'/product/delete/'+${product.id}" method="post">
+    <p><button type="submit">削除</button></p>
+</form>
+
 </body>
 </html>

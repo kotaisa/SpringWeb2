@@ -9,7 +9,7 @@ public interface ProductDao {
 
     List<ProductRecord> findAll();
 
-    int insert(ProductRecord userRecord);
+    int insert(String name, int price);
 
     int update(ProductRecord userRecord);
 

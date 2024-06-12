@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>商品追加</title>
+</head>
+<body>
+<h1>商品情報更新</h1>
+<form th:action="'/product/update/'+${updateForm.id}" method="post" th:object="${updateForm}">
+
+    <p>
+        <label th:text="#{updateProduct.id}"></label>
+        <label th:text="*{id}"></label>
+    </p>
+
+    <p>
+        <label th:text="#{addProduct.productName}"></label>
+        <input type="text" th:field="*{productName}">
+    </p>
+    <div class="error" th:each="error: ${#fields.errors('productName')}">
+        [[ ${error} ]]
+    </div>
+
+    <p>
+        <label th:text="#{addProduct.price}"></label>
+        <input type="text" th:field="*{price}">
+    </p>
+    <div class="error" th:each="error: ${#fields.errors('price')}">
+        [[ ${error} ]]
+    </div>
+
+    <p>
+        <button type="submit">更新</button>
+    </p>
+</form>
+
+</body>
+</html>

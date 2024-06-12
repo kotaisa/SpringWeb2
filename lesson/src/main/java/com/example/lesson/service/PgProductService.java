@@ -33,21 +33,26 @@ public class PgProductService implements ProductService {
 
     @Override
     public ProductRecord findById(int id) {
+
         return productDao.findById(id);
     }
 
     @Override
     public List<ProductRecord> findAll() {
+
         return productDao.findAll();
     }
 
     @Override
-    public int insert(ProductRecord p) {
-        try {
-            return productDao.insert(p);
-        } catch (DataAccessException e) {
-            return 0;
-        }
+    public int insert(String name, int price) {
+
+        return productDao.insert(name, price);
+
+//        try {
+//            return productDao.insert(name, price);
+//        } catch (DataAccessException e) {
+//            return 0;
+//        }
     }
 
     @Override
